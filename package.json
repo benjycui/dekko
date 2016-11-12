@@ -1,0 +1,36 @@
+{
+  "name": "dekko",
+  "version": "0.0.0",
+  "description": "To test directory structure. ",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint ./index.js ./test",
+    "eslint-fix": "eslint --fix ./index.js ./test",
+    "test": "npm run lint && mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/benjycui/dekko.git"
+  },
+  "keywords": [
+    "test",
+    "assert",
+    "directory",
+    "file",
+    "structure"
+  ],
+  "author": "Benjy Cui",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/benjycui/dekko/issues"
+  },
+  "homepage": "https://github.com/benjycui/dekko#readme",
+  "dependencies": {
+    "glob": "^7.1.1"
+  },
+  "devDependencies": {
+    "eslint": "^3.10.0",
+    "eslint-config-egg": "^3.2.0",
+    "mocha": "^3.1.2"
+  }
+}

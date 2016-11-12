@@ -1,7 +1,7 @@
 {
   "name": "dekko",
   "version": "0.0.0",
-  "description": "To test directory structure. ",
+  "description": "To test whether files and directory structure are valid.",
   "main": "index.js",
   "scripts": {
     "lint": "eslint ./index.js ./test",

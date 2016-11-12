@@ -23,33 +23,33 @@ $('dist')
 
 ### $(pattern[, options]): Object
 
-`pattern` and `options` in parameters are the same as [`glob`](https://github.com/isaacs/node-glob)'s. If `pattern` doesn't match any files with the `options`, dekko will throw an error.
+`pattern` and `options` in parameters are the same as [`glob`](https://github.com/isaacs/node-glob)'s. If `pattern` doesn't match any files with the `options`, dekko will throw an error which will stop CI.
 
-This function will return a dekko object with the following methods.
+This function will return a `dekko` object with the following methods.
 
 ### .isFile(): Object
 
-If every file in dekko object is a file, nothing will happen. Otherwise, dekko will throw an error.
+If every file in `dekko` object is a file, nothing will happen. Otherwise, `dekko` will throw an error.
 
 ### .isDirectory(): Object
 
-If every file in dekko object is a directory, nothing will happen. Otherwise, dekko will throw an error.
+If every file in `dekko` object is a directory, nothing will happen. Otherwise, `dekko` will throw an error.
 
 ### .hasFile(name: string): Object
 
-If every file in dekko object has a file with this `name`, nothing will happen. Otherwise, dekko will throw an error.
+If every file in `dekko` object has a file with this `name`, nothing will happen. Otherwise, `dekko` will throw an error.
 
 ### .hasDirectory(name: string): Object
 
-If every file in dekko object has a directory with this `name`, nothing will happen. Otherwise, dekko will throw an error.
+If every file in `dekko` object has a directory with this `name`, nothing will happen. Otherwise, `dekko` will throw an error.
 
 ### .assert(message: string, pred: Function): Object
 
-Sometimes, built-in utility functions are not enough. Then we can use `.assert`, if every file in dekko object pass the `pred` function, nothing will happen. Otherwise, dekko will throw an error with `message`.
+Sometimes, built-in utility functions are not enough. Then we can use `.assert`, if every file in `dekko` object pass the `pred` function, nothing will happen. Otherwise, `dekko` will throw an error with `message`.
 
 #### pred(filename: string): boolean
 
-dekko will pass filename to `pred` one by one. `true` means that file is valid, and `false` means invalid.
+`dekko` will pass filename to `pred` one by one. `true` means that file is valid, and `false` means invalid.
 
 ## License
 

@@ -73,4 +73,11 @@ describe('dekko', () => {
       assert.throws(() => $('test/fixtures').hasDirectory('a'));
     });
   });
+
+  describe('#filter', () => {
+    it('should work like Array.prototype.filter', () => {
+      const o = $('test/fixtures/*').filter(filename => /a$/.test(filename));
+      assert.deepEqual(o.filenames, [ 'test/fixtures/a' ]);
+    });
+  });
 });

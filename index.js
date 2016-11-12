@@ -5,11 +5,16 @@ const path = require('path');
 const glob = require('glob');
 
 function Dekko(pattern, options) {
-  const filenames = glob.sync(pattern, options);
-  if (filenames.length === 0) {
-    throw new Error(`There is not file that matches pattern \`${pattern}.\``);
+  if (Array.isArray(pattern) && !options) {
+    // Private
+    this.filenames = pattern;
+  } else {
+    const filenames = glob.sync(pattern, options);
+    if (filenames.length === 0) {
+      throw new Error(`There is not file that matches pattern \`${pattern}\`.`);
+    }
+    this.filenames = filenames;
   }
-  this.filenames = filenames;
 }
 
 Object.assign(Dekko.prototype, {
@@ -47,6 +52,10 @@ Object.assign(Dekko.prototype, {
           fs.statSync(path.join(filename, subDirName)).isDirectory();
       }).length === 1;
     });
+  },
+  filter(cond) {
+    const filenames = this.filenames.filter(cond);
+    return new Dekko(filenames);
   },
 });
 

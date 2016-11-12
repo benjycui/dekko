@@ -56,6 +56,10 @@ Sometimes, built-in utility functions are not enough. Then we can use `.assert`,
 
 `dekko` will pass filename to `pred` one by one. `true` means that file is valid, and `false` means invalid.
 
+### .filter(cond): Object
+
+`.filter` works like `Array.prototype.filter`, and it return a new `dekko` object with filtered items.
+
 ## License
 
 MIT

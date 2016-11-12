@@ -21,7 +21,7 @@ Object.assign(Dekko.prototype, {
   assert(message, pred) {
     const failed = this.filenames.filter(filename => !pred(filename));
     failed.forEach(filename => {
-      throw new Error(`${filename} ${message}`);
+      throw new Error(`'${filename}' ${message}`);
     });
     return this;
   },
@@ -38,7 +38,7 @@ Object.assign(Dekko.prototype, {
     );
   },
   hasFile(name) {
-    return this.assert(`it should has a file named ${name}`, filename => {
+    return this.assert(`it should has a file named '${name}'`, filename => {
       return fs.readdirSync(filename).filter(subFilename => {
         return subFilename === name &&
           fs.statSync(path.join(filename, subFilename)).isFile();
@@ -46,7 +46,7 @@ Object.assign(Dekko.prototype, {
     });
   },
   hasDirectory(name) {
-    return this.assert(`it should has a directory named ${name}`, filename => {
+    return this.assert(`it should has a directory named '${name}'`, filename => {
       return fs.readdirSync(filename).filter(subDirName => {
         return subDirName === name &&
           fs.statSync(path.join(filename, subDirName)).isDirectory();

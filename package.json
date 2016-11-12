@@ -1,6 +1,6 @@
 {
   "name": "dekko",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "To test whether files and directory structure are valid.",
   "main": "index.js",
   "scripts": {
